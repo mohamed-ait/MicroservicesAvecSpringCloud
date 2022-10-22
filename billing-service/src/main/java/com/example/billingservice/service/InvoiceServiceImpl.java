@@ -7,12 +7,12 @@ import com.example.billingservice.entities.Invoice;
 import com.example.billingservice.mappers.InvoiceMapper;
 import com.example.billingservice.openfeigh.CustomerServiceRestClient;
 import com.example.billingservice.repositories.InvoiceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -53,5 +53,19 @@ public class InvoiceServiceImpl implements InvoiceService {
             return invoiceMapper.fromInvoice(inv);
         }).collect(Collectors.toList());
         return invoiceResponseDTOS;
+    }
+
+    @Override
+    public void delete(String id) {
+        invoiceRepository.deleteById(id);
+    }
+
+    @Override
+    public InvoiceResponseDTO updateInvoice(String idInvoice,InvoiceRequestDTO invoiceRequestDTO) {
+     Invoice invoice=invoiceRepository.findById(idInvoice).get();
+     invoice.setAmount(invoiceRequestDTO.getAmount());
+     invoice.setCustomerId(invoiceRequestDTO.getCustomerId());
+     invoiceRepository.save(invoice);
+        return invoiceMapper.fromInvoice(invoice);
     }
 }
