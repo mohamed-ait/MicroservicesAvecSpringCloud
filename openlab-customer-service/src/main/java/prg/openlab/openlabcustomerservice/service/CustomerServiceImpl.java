@@ -63,4 +63,10 @@ public class CustomerServiceImpl implements CustomerService {
                 map(cus->customerMapper.customerToCustomerResponseDTO(cus)).collect(Collectors.toList());
         return customerResponseDTOS;
     }
+
+    @Override
+    public void deleteCustomer(String id) {
+        customerRepository.deleteById(id);    }
+
+
 }
