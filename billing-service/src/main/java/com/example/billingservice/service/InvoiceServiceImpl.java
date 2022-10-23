@@ -42,6 +42,11 @@ public class InvoiceServiceImpl implements InvoiceService {
 
     @Override
     public InvoiceResponseDTO save(InvoiceRequestDTO invoiceRequestDTO) {
+        try{
+            Customer customer=customerServiceRestClient.getCustomer(invoiceRequestDTO.getCustomerId());
+        }catch (Exception e){
+            throw new CustomerNotFountException("customer not found ");
+        }
         Invoice invoice= invoiceMapper.fromInvoiceRequestDTO(invoiceRequestDTO);
         invoice.setId(UUID.randomUUID().toString());
         invoice.setDate(new Date());
