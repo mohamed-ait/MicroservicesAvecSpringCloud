@@ -46,5 +46,10 @@ public class InvoiceRestController {
     public InvoiceResponseDTO update(@PathVariable String id, @RequestBody InvoiceRequestDTO invoiceRequestDTO){
         return invoiceService.updateInvoice(id,invoiceRequestDTO);
     }
+    //method to return the generated error message by exceptions classes :
+    @ExceptionHandler(Exception.class)
+    public String exceptionHandler(Exception e){
+        return e.getMessage();
+    }
 
 }

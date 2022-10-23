@@ -1,5 +1,6 @@
 package com.example.billingservice.service;
 
+import com.example.billingservice.Exceptions.CustomerNotFoundException;
 import com.example.billingservice.dtos.InvoiceRequestDTO;
 import com.example.billingservice.dtos.InvoiceResponseDTO;
 import com.example.billingservice.entities.Customer;
@@ -45,7 +46,7 @@ public class InvoiceServiceImpl implements InvoiceService {
         try{
             Customer customer=customerServiceRestClient.getCustomer(invoiceRequestDTO.getCustomerId());
         }catch (Exception e){
-            throw new CustomerNotFountException("customer not found ");
+            throw new CustomerNotFoundException("customer not found ");
         }
         Invoice invoice= invoiceMapper.fromInvoiceRequestDTO(invoiceRequestDTO);
         invoice.setId(UUID.randomUUID().toString());
