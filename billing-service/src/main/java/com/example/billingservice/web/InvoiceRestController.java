@@ -15,16 +15,23 @@ public class InvoiceRestController {
     public InvoiceRestController(InvoiceService invoiceService) {
         this.invoiceService = invoiceService;
     }
+    //methode pour recuperer toutes les factures :
+    @GetMapping(path = "/invoices")
+    public List<InvoiceResponseDTO> getInvoices(){
+        return invoiceService.getInvoices();
+    }
     //methode pour recuperer la facture par son id :
     @GetMapping(path = "/invoices/{id}")
     public InvoiceResponseDTO getInvoice(@PathVariable(name = "id") String id){
         return invoiceService.getInvoice(id);
     }
+
     //methode pour recupérer la liste des facuture d'un customer donné :
+    @GetMapping(path = "/invoicesByCustomer/{customerId}")
     public List<InvoiceResponseDTO> getInvoicesByCustomer(@PathVariable(name = "customerId") String customerId){
         return invoiceService.getInvoicesByCustomerId(customerId);
     }
-    //methode pour ajouter une facrure :
+    //methode pour ajouter une facture :
     @PostMapping(path = "/invoices")
     public InvoiceResponseDTO save(@RequestBody InvoiceRequestDTO invoiceRequestDTO){
         return invoiceService.save(invoiceRequestDTO);

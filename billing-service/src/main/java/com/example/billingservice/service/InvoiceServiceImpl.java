@@ -29,6 +29,18 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
+    public List<InvoiceResponseDTO> getInvoices() {
+        List<Invoice> invoices=invoiceRepository.findAll();
+        invoices.forEach(inv->{
+             inv.setCustomer(customerServiceRestClient.getCustomer(inv.getCustomerId()));
+        });
+        List<InvoiceResponseDTO> invoiceResponseDTOS= invoices.stream().map(invoice -> {
+            return invoiceMapper.fromInvoice(invoice);
+        }).collect(Collectors.toList());
+        return invoiceResponseDTOS;
+    }
+
+    @Override
     public InvoiceResponseDTO save(InvoiceRequestDTO invoiceRequestDTO) {
         Invoice invoice= invoiceMapper.fromInvoiceRequestDTO(invoiceRequestDTO);
         invoice.setId(UUID.randomUUID().toString());
@@ -38,17 +50,21 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public InvoiceResponseDTO getInvoice(String invoiceId) {
-        Invoice invoice=invoiceRepository.findById(invoiceId).get();
+    public InvoiceResponseDTO getInvoice(String id) {
+        Invoice invoice=invoiceRepository.findById(id).get();
         //recuperer le customer depuis le service customer :
         Customer customer=customerServiceRestClient.getCustomer(invoice.getCustomerId());
         invoice.setCustomer(customer);
+        System.out.println(invoice.toString());
         return invoiceMapper.fromInvoice(invoice);
     }
 
     @Override
     public List<InvoiceResponseDTO> getInvoicesByCustomerId(String customerId) {
         List<Invoice> invoicesBycustomerId=invoiceRepository.findByCustomerId(customerId);
+        invoicesBycustomerId    .forEach(inv->{
+            inv.setCustomer(customerServiceRestClient.getCustomer(inv.getCustomerId()));
+        });
         List<InvoiceResponseDTO> invoiceResponseDTOS=invoicesBycustomerId.stream().map(inv->{
             return invoiceMapper.fromInvoice(inv);
         }).collect(Collectors.toList());

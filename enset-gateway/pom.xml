@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.enset</groupId>
-	<artifactId>enset-eureka-service</artifactId>
+	<artifactId>enset-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>enset-eureka-service</name>
-	<description>enset-eureka-service</description>
+	<name>enset-gateway</name>
+	<description>enset-gateway</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.4</spring-cloud.version>
@@ -20,7 +20,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
 		</dependency>
 
 		<dependency>
