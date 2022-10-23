@@ -3,6 +3,8 @@ package com.example.billingservice.web;
 import com.example.billingservice.dtos.InvoiceRequestDTO;
 import com.example.billingservice.dtos.InvoiceResponseDTO;
 import com.example.billingservice.service.InvoiceService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,8 +50,8 @@ public class InvoiceRestController {
     }
     //method to return the generated error message by exceptions classes :
     @ExceptionHandler(Exception.class)
-    public String exceptionHandler(Exception e){
-        return e.getMessage();
+    public ResponseEntity exceptionHandler(Exception e){
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }
