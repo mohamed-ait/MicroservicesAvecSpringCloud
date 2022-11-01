@@ -1,4 +1,4 @@
-<h1>La partie de déploiment des services en utilisant docker et docker-compose </h1>
+<h1>La partie du déploiment des services en utilisant docker et docker-compose </h1>
 <h2>Le fichier Dockerfile de chaque service : </h2>
 <h3> customer service: </h3>
 <kbd><img src="https://user-images.githubusercontent.com/80115513/199354040-bb342af6-4f20-4d6a-b0c5-426c629ad0e5.png"></kbd>
@@ -13,5 +13,5 @@
 <h2>Vérifier le fonctionnement des services dans les conteneurs docker : </h2>
 <h3> Voici la liste des conteneurs qui sont en etat d'éxécution : </h3>
 <kbd><img src="https://user-images.githubusercontent.com/80115513/199355052-c28472bb-f35b-45fd-ab3a-45ac0a4311f9.png"></kbd>
-<h3>Voici les services sont enregistrés dans le serveur eureka   : </h3>
+<h3>Voici les microservices et la gateway sont enregistrés dans le serveur eureka   : </h3>
 <kbd><img src="https://user-images.githubusercontent.com/80115513/199355313-0d99216e-e030-4365-a6ae-4eea73363e8f.png"></kbd>
