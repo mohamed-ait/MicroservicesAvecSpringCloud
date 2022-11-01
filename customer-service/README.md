@@ -18,7 +18,7 @@
 <h2> 5. La couche web </h2>
 <h2>5.1. La classe controleur CustomerRestApi </h2>
 <kbd><img src="https://user-images.githubusercontent.com/80115513/199309095-a8833017-1b9e-4314-9109-12b1a3b1d414.png"></kbd>
-<h2>5.2. Tester le fonctionnemnt de rest api </h2>
+<h2>5.2. Vérifier le fonctionnemnt de rest api </h2>
 <kbd><img src="https://user-images.githubusercontent.com/80115513/199311234-b2d52f11-9a2a-4182-96b8-2d910df6a064.png"></kbd>
 <h2> 6. L'ajout des enregistrement dans la table customer </h2>
 <kbd><img src="https://user-images.githubusercontent.com/80115513/199309414-4f8b5ae7-f9d7-4ae5-9938-0f9d78063513.png"></kbd>
