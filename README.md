@@ -5,8 +5,8 @@
 
 | Microservice      |                                                        Lien                                                       |
 |   -----------     |   ----------------------------------------------------------------------------------------------------------      |
-| Customer-Service  | [:link:](https://github.com/mohamed-ait/openlab-customer-service-spring-boot/tree/main/openlab-customer-service)  |
-| Billing-Service   | [:link:](https://github.com/mohamed-ait/openlab-customer-service-spring-boot/tree/main/billing-service)           |
-| Eureka-service    | [:link:](https://github.com/mohamed-ait/openlab-customer-service-spring-boot/tree/main/enset-eureka-service)      |
+| Customer-Service  | [:link:](https://github.com/mohamed-ait/MicroservicesAvecSpringCloud/tree/main/customer-service)  |
+| Billing-Service   | [:link:](https://github.com/mohamed-ait/MicroservicesAvecSpringCloud/tree/main/billing-service)           |
+| Eureka-service    | [:link:](https://github.com/mohamed-ait/MicroservicesAvecSpringCloud/tree/main/enset-gateway)      |
 | Gateway           | [:link:](https://github.com/mohamed-ait/openlab-customer-service-spring-boot/tree/main/enset-gateway)             |
 
