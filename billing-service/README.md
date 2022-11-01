@@ -2,7 +2,7 @@
 <h2> 1. La couche DAO </h2>
 <h2> 1.1. La classe Invoice </h2>
 <kbd><img src="https://user-images.githubusercontent.com/80115513/199315692-c481fa82-6f17-4c0f-8716-37234ac6c4e6.png"></kbd>
-<h2> 1.2. La classe Customer (classe non persistant) </h2>
+<h2> 1.2. La classe Customer (classe non persistent) </h2>
 <kbd><img src="https://user-images.githubusercontent.com/80115513/199315971-540c3e62-b710-4c61-bb9c-1aad7a336073.png"></kbd>
 <h2> 2. La couche DTO </h2>
 <h2> 2.1. La classe InvoiceRequestDTO </h2>
