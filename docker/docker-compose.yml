@@ -1,0 +1,20 @@
+version : '3'
+
+services :
+   eureka-service :
+      network_mode: host
+      image : eureka-service
+
+   gateway :
+      network_mode: host
+      image : gateway
+
+   customer-service :
+      network_mode: host
+      image : customer-service
+
+   billing-service :
+      network_mode: host
+      image : billing-service
+      restart : always
+
