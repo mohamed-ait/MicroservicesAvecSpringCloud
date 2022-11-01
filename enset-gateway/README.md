@@ -1,5 +1,5 @@
 <h1>Le service gateway </h1>
-<h3>gateway : représente une intermidiaire entre les clients et les microservices en fait il permet de gérer et distibuer le trafic des clients sur les microservices, à vrai dire qu'il s'occupe de l'équilibrage de charge (load balancer) </h3>
+<h3>gateway : représente une intermidiaire entre les clients et les microservices en fait il permet de gérer et distibuer le trafic des clients sur les microservices.</h3>
 <h2>La dépendance  </h2>
 <kbd><img src="https://user-images.githubusercontent.com/80115513/199326441-2eec7695-f623-409c-b8b0-a8ef9796a97b.png"></kbd>
 <h2>La dépendance  </h2>
