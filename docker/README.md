@@ -1,4 +1,4 @@
-<h1>La partie de déploiment desmicroservices en utilisant docker et dicker-compose </h1>
+<h1>La partie de déploiment des services en utilisant docker et dicker-compose </h1>
 <h2>Le fichier Dockerfile de chaque service : </h2>
 <h3> customer service: </h3>
 <kbd><img src="https://user-images.githubusercontent.com/80115513/199354040-bb342af6-4f20-4d6a-b0c5-426c629ad0e5.png"></kbd>
