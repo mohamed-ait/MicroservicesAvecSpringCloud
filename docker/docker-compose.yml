@@ -3,18 +3,18 @@ version : '3'
 services :
    eureka-service :
       network_mode: host
-      image : eureka-service
+      image : mohamedaitlahcen/eureka-service
 
-   gateway :
+   enset-gateway :
       network_mode: host
-      image : gateway
+      image : mohamedaitlahcen/enset-gateway
 
    customer-service :
       network_mode: host
-      image : customer-service
+      image : mohamedaitlahcen/customer-service
 
    billing-service :
       network_mode: host
-      image : billing-service
+      image : mohamedaitlahcen/billing-service
       restart : always
 
