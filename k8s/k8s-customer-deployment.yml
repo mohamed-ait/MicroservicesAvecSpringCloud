@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-deployment
+  namespace: default
+  labels:
+    app: customer
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: customer
+  template:
+    metadata:
+      labels:
+        app: customer
+    spec:
+      containers:
+        - name: customer-service-container
+          image: mohamedaitlahcen/customer-service
+          env:
+            - name: eureka.instance.prefer-ip-address
+              value: 'true'
+            - name: server.port
+              value: '8082'
+            - name: spring.application.name
+              value: CUSTOMER-SERVICE
+            - name: spring.h2.console.enabled
+              value: 'true'
+            - name: spring.cloud.discovery.enabled
+              value: 'true'
+            - name: spring.datasource.url
+              value: jdbc:h2:mem:customer-db
+            - name: springdoc.swagger-ui.path
+              value: /swagger-ui.html
+            - name: eureka.client.service-url.defaultZone
+              value: http://eureka-service:8761/eureka
+          ports:
+            - containerPort: 8082
